@@ -10,7 +10,7 @@ header{
   justify-content:flex-end;
   background-color:#FF00FF;
 }
-header>:first-child{
+header>:first-child{ /*[>]必要*/
   margin-right:auto;
 }
 .header-box{
@@ -20,17 +20,18 @@ header>:first-child{
   background-color:#FF99FF;
 }
 main{
-  width:1000px;
-  margin: 0 auto;
   display:flex;
+  justify-content:center;/*flexとmargin:0 auto;は相性悪い*/
 }
 .main-left{
   width:300px;
   background-color:#AEFFBD;
 }
 .main-right{
-  width:700px;
+  max-width:700px;/*最大値を指定するプロパティ*/
   padding:20px;
+  display:flex;
+  flex-grow:1;
   flex-wrap:wrap;
   background-color:green;
 }
@@ -38,7 +39,21 @@ main{
   margin:10px;
   flex-basis: 200px;
   height:130px;
-  flex-grow:1;
   background-color:yellow;
+}
+footer{
+  width:100%;
+  padding:20px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;/*wrap指定し中央寄せで図のようになる*/
+  background-color:blue;
+}
+.footer-box{
+  margin:10px;
+  height:40px;
+  max-width:600px;
+  flex-basis:45%;
+  background-color:aqua;
 }
 
